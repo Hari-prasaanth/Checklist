@@ -1,5 +1,22 @@
 # Secure Coding Practices
-## 1. Input Validation
+
+### Contents:
+1. [Input Validation](#1-input-validation)
+2. [Output Encoding](#2-output-encoding)
+3. [Authentication and Password Management](#3-authentication-and-password-management)
+4. [Session Management](#4-session-management)
+5. [Access Control](#5-access-control)
+6. [Cryptographic Practices](#6-cryptographic-practices)
+7. [Error Handling and Logging](#7-error-handling-and-logging)
+8. [Data Protection](#8-data-protection)
+9. [Communication Security](#9-communication-security)
+10. [System Configuration](#10-system-configuration)
+11. [Database Security](#11-database-security)
+12. [File Management](#12-file-management)
+13. [Memory Management](#13-memory-management)
+14. [General Coding Practices](#14-general-coding-practices)
+
+## 1. Input Validation 
 | No | Test Case | Scenario | Example |
 |---|---|---|---|
 | 1.1 | Conduct all data validation on a trusted system | Ensure that all data validation is performed on the server, not on the client side. This prevents validation rules from being bypassed by manipulating client-side code. | When a user submits a form, the server checks the input data for validity and rejects it if it doesn't meet the criteria. Client-side JavaScript should not be relied upon for validation. |
