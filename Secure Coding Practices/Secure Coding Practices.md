@@ -17,6 +17,7 @@
 14. [General Coding Practices](#14-general-coding-practices)
 
 ## 1. Input Validation 
+The "Input validation" section in your Secure Coding Practices checklist involves measures to ensure that data coming into your application is safe and free from potential security risks. It includes practices like conducting validation on trusted systems, distinguishing between trusted and untrusted data sources, specifying character sets, validating data types, lengths, and ranges, and being cautious about potentially hazardous characters. The goal is to prevent malicious data from entering your application and to handle it safely if it must be allowed. These practices help safeguard against common security vulnerabilities, such as injection attacks, by ensuring that only well-formed, expected, and safe data is processed.
 | No | Test Case | Scenario | Example |
 |---|---|---|---|
 | 1.1 | Conduct all data validation on a trusted system | Ensure that all data validation is performed on the server, not on the client side. This prevents validation rules from being bypassed by manipulating client-side code. | When a user submits a form, the server checks the input data for validity and rejects it if it doesn't meet the criteria. Client-side JavaScript should not be relied upon for validation. |
@@ -38,6 +39,7 @@
 
 <br><br>
 ## 2. Output Encoding 
+The "output encoding" section in your Secure Coding Practices checklist focuses on ensuring that data leaving your application is secure and properly formatted. It involves practices such as conducting encoding on trusted systems, utilizing established encoding routines, and contextually encoding or sanitizing data before returning it to clients. This helps prevent security vulnerabilities by ensuring that all data is presented in a safe and well-structured manner, especially when it originated from untrusted sources. Proper output encoding safeguards against issues like cross-site scripting (XSS) and injection attacks by ensuring that data is correctly processed for the intended interpreter and presentation medium.
 | No | Test Case | Scenario | Example |
 |---|---|---|---|
 | 2.1 | Conduct all encoding on a trusted system | Ensure that all encoding of output data is performed on the server, not on the client side, to prevent tampering and security vulnerabilities. | When generating HTML for a web page, the server should encode special characters to prevent cross-site scripting (XSS) vulnerabilities. |
@@ -49,6 +51,7 @@
 
 <br><br>
 ## 3. Authentication and Password Management
+"Authentication and Password Management" focuses on ensuring secure access to your application. It includes practices like requiring authentication for most resources, using standard authentication services, securely storing and handling passwords, enforcing password complexity and reset policies, and monitoring for suspicious activities. The goal is to protect user accounts, data, and sensitive functions by implementing strong authentication and password management practices, ultimately safeguarding against unauthorized access and security breaches.
 | No | Test Case | Scenario | Example |
 |---|---|---|---|
 | 3.1 | Require authentication for all pages and resources | Ensure that authentication is required for all pages and resources, except those specifically intended to be public. | All users accessing the application should be required to authenticate themselves, except for publicly accessible information like a homepage. |
@@ -89,6 +92,7 @@
 
 <br><br>
 ## 4. Session Management
+"Session Management" is all about ensuring secure and well-controlled user sessions within your application. It involves practices like using trusted session management controls, setting appropriate timeout periods, disallowing concurrent logins, and protecting session data from unauthorized access. The primary goal is to safeguard user sessions from common threats like session hijacking or Cross-Site Request Forgery (CSRF) by implementing robust session management practices. These practices help maintain the integrity and security of user sessions while allowing for smooth and secure interactions with your application.
 | No | Test Case | Scenario | Example |
 |---|---|---|---|
 | 4.1 | Use Server or Framework Session Management | Utilize the built-in session management provided by your web server or framework. This ensures that your application recognizes and uses valid session identifiers. | If you're using a web framework like Express.js in Node.js, use its session management features. |
@@ -113,6 +117,7 @@
 
 <br><br>
 ## 5. Access Control
+"Access Control" is about ensuring that only authorized users can access specific parts of your application. This section includes practices such as using trusted system objects for authorization decisions, enforcing access controls on every request, segregating privileged logic, and restricting access to files, resources, URLs, functions, and data. The primary goal is to prevent unauthorized access to sensitive areas of your application and data by implementing strong access control practices. These practices help protect your application from security threats, ensuring that users can only access what they are allowed to and that sensitive information remains secure.
 | No | Test Case | Scenario | Example |
 |---|---|---|---|
 | 5.1 | Use only trusted system objects for access authorization | Use only trusted system objects, such as server-side session objects, for making access authorization decisions. | Access authorization decisions should be based on information from trusted sources within the application. |
@@ -142,6 +147,7 @@
 
 <br><br>
 ## 6. Cryptographic Practices
+The "Cryptographic Practices" section in your Secure Coding Practices checklist revolves around securing data and secrets through proper cryptographic techniques. It includes practices like implementing cryptographic functions on trusted systems, safeguarding master secrets, and ensuring cryptographic modules meet recognized standards like FIPS 140-3. The primary goal is to protect sensitive information by applying sound cryptographic principles, such as generating secure random values and effectively managing cryptographic keys. These practices help guard against data breaches and unauthorized access to confidential data, enhancing the overall security of your application.
 | No | Test Case | Scenario | Example |
 |---|---|---|---|
 | 6.1 | Implement cryptographic functions on a trusted system | All cryptographic functions used to protect secrets from the application user must be implemented on a trusted system, such as the server. | Cryptographic operations should be performed on a trusted server rather than on the client side to prevent potential security risks. |
@@ -153,6 +159,7 @@
 
 <br><br>
 ## 7. Error Handling and Logging
+"Error Handling and Logging" is essential for maintaining the security and integrity of your application. This section includes practices like not revealing sensitive information in error responses, implementing custom error pages, and securely handling errors, as well as logging important security events and failures. The primary goal is to enhance application security by carefully managing how errors are handled and logged. Proper error handling helps prevent attackers from exploiting vulnerabilities and allows you to monitor and analyze security events effectively to detect and respond to potential threats.
 | No | Test Case | Scenario | Example |
 |---|---|---|---|
 | 7.1 | Do not disclose sensitive information in error responses | Error responses should not reveal sensitive information like system details, session identifiers, or account information. | Instead of displaying detailed error messages that could expose sensitive information, provide a generic error message like "An error occurred, please try again later." |
@@ -182,6 +189,7 @@
 
 <br><br>
 ## 8. Data Protection
+"Data Protection" is crucial for securing sensitive information within your application. This section involves practices like implementing the principle of least privilege, encrypting sensitive data, protecting cached or temporary files, and safeguarding server-side source code. The primary goal is to ensure the confidentiality and integrity of data, preventing unauthorized access or data leaks. Effective data protection practices, like encryption and access controls, help keep sensitive information safe from threats and unauthorized disclosure, ultimately enhancing the security of your application.
 | No | Test Case | Scenario | Example |
 |---|---|---|---|
 | 8.1 | Implement least privilege, restrict users to only the required functionality, data, and system information | Restrict users to only the functionality, data, and system information necessary for them to perform their tasks. | Users in a healthcare application should only have access to patient records they are authorized to view and not the entire database. |
@@ -199,6 +207,7 @@
 
 <br><br>
 ## 9. Communication Security
+"Communication Security" is all about safeguarding data as it travels between different components of your application and external systems. This section includes practices like implementing encryption for sensitive information transmission, ensuring valid and up-to-date TLS certificates, and preventing insecure fallback from failed TLS connections. The main goal is to protect data while it's in transit, ensuring that it remains confidential and integral during communication. Strong communication security practices, like TLS encryption and correct certificate management, help prevent eavesdropping and tampering with sensitive information, ultimately enhancing your application's overall security.
 | No | Test Case | Scenario | Example |
 |---|---|---|---|
 | 9.1 | Implement encryption for the transmission of all sensitive information, including TLS for protecting the connection | Ensure that all sensitive information is transmitted using encryption, such as TLS (Transport Layer Security), to protect the data during transmission. | When a user logs into an online banking application, their username and password are transmitted securely using TLS to prevent eavesdropping. |
@@ -212,6 +221,7 @@
 
 <br><br>
 ## 10. System Configuration
+"System Configuration" is crucial for maintaining a secure environment for your application. This section includes practices like keeping servers and components up-to-date, minimizing privileges, removing unnecessary functionality, and securing HTTP methods. The main goal is to configure your systems in a way that minimizes vulnerabilities and protects against common attack vectors. Effective system configuration practices ensure that your application operates in a secure and robust environment, reducing the risk of security incidents and unauthorized access.
 | No | Test Case | Scenario | Example |
 |---|---|---|---|
 | 10.1 | Ensure servers, frameworks, and system components are running the latest approved version | Regularly check and update servers, frameworks, and system components to the latest approved versions to mitigate vulnerabilities. | An organization should regularly update its web server software to the latest approved version to patch known security vulnerabilities. |
@@ -233,6 +243,7 @@
 
 <br><br>
 ## 11. Database Security
+"Database Security" is essential for ensuring the confidentiality and integrity of your application's data. This section includes practices like using strongly typed parameterized queries, input validation, and output encoding to prevent SQL injection attacks. It also emphasizes the importance of utilizing secure credentials for database access, storing connection strings securely, and minimizing privileges when interacting with the database. The primary goal is to protect your database from unauthorized access and data breaches, ensuring that sensitive information remains secure and confidential. Effective database security practices help safeguard your application's most critical asset – its data.
 | No | Test Case | Scenario | Example |
 |---|---|---|---|
 | 11.1 | Use strongly typed parameterized queries | Employ parameterized queries with strongly typed parameters to interact with the database, preventing SQL injection attacks. | When querying a database for user authentication, use parameterized queries with strongly typed parameters like integers or strings to avoid SQL injection. |
@@ -251,6 +262,7 @@
 
 <br><br>
 ## 12. File Management
+"File Management" is all about handling files securely within your application. This section includes practices like not passing user-supplied data directly to dynamic include functions, authenticating file uploads, validating file types, and avoiding saving files in the same web context as the application. The primary goal is to prevent malicious file uploads, limit access to files, and ensure that files are handled safely to avoid security vulnerabilities. Effective file management practices help maintain the integrity and security of your application's file system and protect it from potential threats.
 | No | Test Case | Scenario | Example |
 |---|---|---|---|
 | 12.1 | Do not pass user supplied data directly to any dynamic include function | Avoid directly passing user-supplied data to dynamic include functions to prevent code execution vulnerabilities. | Instead of using user input to dynamically include a file, use a predefined and validated list of files to include. |
@@ -270,6 +282,7 @@
 
 <br><br>
 ## 13. Memory Management
+"Memory Management" involves handling memory securely in your application. This section emphasizes practices like input and output control for untrusted data, checking buffer sizes to prevent buffer overflows, and avoiding known vulnerable functions. The goal is to ensure that your application efficiently manages memory, mitigates memory-related vulnerabilities, and avoids potential security risks associated with memory handling. Proper memory management contributes to the overall security and reliability of your software.
 | No | Test Case | Scenario | Example |
 |---|---|---|---|
 | 13.1 | Utilize input and output control for un-trusted data | Employ input and output controls to manage data from untrusted sources, ensuring that the data is processed safely and securely. | When accepting user input, apply input controls such as input validation to validate and sanitize the data before using it in the application. Similarly, use output controls like output encoding to prevent data from being executed as code when displayed to users. |
@@ -284,6 +297,7 @@
 
 <br><br>
 ## 14. General Coding Practices
+"General Coding Practices" encompass a set of guidelines for writing secure and reliable code. These practices encourage the use of approved managed code, task-specific APIs, and explicit variable initialization. They also emphasize avoiding direct interaction with the operating system and preventing concurrent access issues in multi-threaded applications. Additionally, the checklist promotes safe calculation handling, secure privilege management, and safeguarding against code injection and unsafe code alterations. Following these practices helps ensure that your code is robust, secure, and free from common vulnerabilities.
 | No | Test Case | Scenario | Example |
 |---|---|---|---|
 | 14.1 | Use tested and approved managed code rather than creating new unmanaged code for common tasks | Prefer using well-tested managed code libraries and APIs for common tasks over developing custom unmanaged code. | Instead of implementing custom unmanaged code for file I/O operations, use a widely accepted managed code library or API like .NET's File class for safe and efficient file operations. |
