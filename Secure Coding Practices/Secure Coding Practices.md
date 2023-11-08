@@ -15,6 +15,7 @@
 12. [File Management](#12-file-management)
 13. [Memory Management](#13-memory-management)
 14. [General Coding Practices](#14-general-coding-practices)
+15. [Glossary](#15-glossary)
 
 <br><br>
 ## 1. Input Validation 
@@ -355,3 +356,95 @@ The "Cryptographic Practices" section in your Secure Coding Practices checklist 
 | 14.10 | Restrict users from generating new code or altering existing code | Prevent users from generating or modifying code to maintain control over the application's behavior and security. | Avoid providing users with the capability to write or execute arbitrary code within the application, as this can lead to security risks. |
 | 14.11 | Review all secondary applications, third-party code, and libraries to determine business necessity and validate safe functionality, as these can introduce new vulnerabilities | Conduct a thorough review of secondary applications, third-party code, and libraries to assess their necessity and ensure that their functionality does not introduce security vulnerabilities. | Before integrating third-party code or libraries into your application, carefully review and validate the code to confirm that it is both necessary for your business requirements and free from security vulnerabilities. |
 | 14.12 | Implement safe updating. If the application will utilize automatic updates, then use cryptographic signatures for your code and ensure your download clients verify those signatures. Use encrypted channels to transfer the code from the host server | Implement secure update mechanisms, especially if your application supports automatic updates. Utilize cryptographic signatures to verify code authenticity, and ensure download clients validate these signatures. Additionally, use encrypted channels to transfer code updates from the host server. | When delivering automatic updates for your application, ensure that the updates are digitally signed with a cryptographic signature to guarantee their authenticity. The download client should verify these signatures before applying updates. Encrypt the communication channel between the host server and the client to protect the code updates from interception. |
+
+<br><br>
+## 15. Glossary
+- **Abuse Case:** Describes the intentional and unintentional misuses of the software. Abuse cases should challenge the assumptions of the system design.
+
+- **Access Control:** A set of controls that grant or deny a user, or other entity, access to a system resource. This is usually based on hierarchical roles and individual privileges within a role, but also includes system to system interactions.
+
+- **Authentication:** A set of controls that are used to verify the identity of a user, or other entity, interacting with the software.
+
+- **Availability:** A measure of a system's accessibility and usability.
+
+- **Canonicalize:** To reduce various encodings and representations of data to a single simple form.
+
+- **Communication Security:** A set of controls that help ensure the software handles the sending and receiving of information in a secure manner.
+
+- **Confidentiality:** To ensure that information is disclosed only to authorized parties.
+
+- **Contextual Output Encoding:** Encoding output data based on how it will be utilized by the application. The specific methods vary depending on the way the output data is used. If the data is to be included in the response to the client, account for inclusion scenarios like: the body of an HTML document, an HTML attribute, within JavaScript, within a CSS or in a URL. You must also account for other use cases like SQL queries, XML and LDAP.
+
+- **Cross Site Request Forgery:** An external website or application forces a client to make an unintended request to another application that the client has an active session with. Applications are vulnerable when they use known, or predictable, URLs and parameters; and when the browser automatically transmits all required session information with each request to the vulnerable application. (This is one of the only attacks specifically discussed in this document and is only included because the associated vulnerability is very common and poorly understood.)
+
+- **Cryptographic Practices:** A set of controls that ensure cryptographic operations within the application are handled securely.
+
+- **Data Protection:** A set of controls that help ensure the software handles the storing of information in a secure manner.
+
+- **Database Security:** A set of controls that ensure that software interacts with a database in a secure manner and that the database is configured securely.
+
+- **Error Handling and Logging:** A set of practices that ensure the application handles errors safely and conducts proper event logging.
+
+- **Exploit:** To take advantage of a vulnerability. Typically this is an intentional action designed to compromise the software's security controls by leveraging a vulnerability.
+
+- **File Management:** A set of controls that cover the interaction between the code and other system files.
+
+- **General Coding Practices:** A set of controls that cover coding practices that do not fit easily into other categories.
+
+- **Hazardous Character:** Any character or encoded representation of a character that can affect the intended operation of the application or associated system by being interpreted to have a special meaning, outside the intended use of the character. These characters may be used to:
+  - Alter the structure of existing code or statements
+  - Insert new unintended code
+  - Alter paths
+  - Cause unexpected outcomes from program functions or routines
+  - Cause error conditions
+  - Have any of the above effects on downstream applications or systems
+
+- **HTML Entity Encode:** The process of replacing certain ASCII characters with their HTML entity equivalents. For example, encoding would replace the less-than character "<" with the HTML equivalent "&lt;". HTML entities are 'inert' in most interpreters, especially browsers, which can mitigate certain client-side attacks.
+
+- **Impact:** A measure of the negative effect on the business that results from the occurrence of an undesired event; what would be the result of a vulnerability being exploited.
+
+- **Input Validation:** A set of controls that verify the properties of all input data match what is expected by the application, including types, lengths, ranges, acceptable character sets, and does not include known hazardous characters.
+
+- **Integrity:** The assurance that information is accurate, complete, and valid and has not been altered by an unauthorized action.
+
+- **Log Event Data:** This should include the following:
+  - Time stamp from a trusted system component
+  - Severity rating for each event
+  - Tagging of security-relevant events if they are mixed with other log entries
+  -  Identity of the account/user that caused the event
+  - Source IP address associated with the request
+  - Event outcome (success or failure)
+  - Description of the event
+
+- **Memory Management:** A set of controls that address memory and buffer usage.
+
+- **Mitigate:** Steps taken to reduce the severity of a vulnerability. These can include removing a vulnerability, making a vulnerability more difficult to exploit, or reducing the negative impact of a successful exploitation.
+
+- **Multi-Factor Authentication:** An authentication process that requires the user to produce multiple distinct types of credentials. Typically, this is based on something they have (e.g., a smart card), something they know (e.g., a pin), or something they are (e.g., data from a biometric reader).
+
+- **Output Encoding:** A set of controls addressing the use of encoding to ensure data output by the application is safe.
+
+- **Parameterized Queries (prepared statements):** Keeps the query and data separate through the use of placeholders. The query structure is defined with placeholders, the SQL statement is sent to the database and prepared, and then the prepared statement is combined with the parameter values. This prevents the query from being altered because the parameter values are combined with the compiled statement, not a SQL string.
+
+- **Sanitize Data:** The process of making potentially harmful data safe through the use of data removal, replacement, encoding, or escaping of the characters.
+
+- **Security Controls:** An action that mitigates a potential vulnerability and helps ensure that the software behaves only in the expected manner.
+
+- **Security Requirements:** A set of design and functional requirements that help ensure the software is built and deployed in a secure manner.
+
+- **Sequential Authentication:** When authentication data is requested on successive pages rather than being requested all at once on a single page.
+
+- **Session Management:** A set of controls that help ensure web applications handle HTTP sessions in a secure manner.
+
+- **State Data:** When data or parameters are used by the application or server to emulate a persistent connection or track a client's status across a multi-request process or transaction.
+
+- **System:** A generic term covering the operating systems, web server, application frameworks, and related infrastructure.
+
+- **System Configuration:** A set of controls that help ensure the infrastructure components supporting the software are deployed securely.
+
+- **Threat Agent:** Any entity that may have a negative impact on the system. This may be a malicious user who wants to compromise the system's security controls; however, it could also be an accidental misuse of the system or a more physical threat like fire or flood.
+
+- **Trust Boundaries:** Typically, a trust boundary constitutes the components of the system under your direct control. All connections and data from systems outside of your direct control, including all clients and systems managed by other parties, should be considered untrusted and be validated at the boundary before allowing further system interaction.
+
+- **Vulnerability:** A weakness that makes the system susceptible to attack or damage.
+
