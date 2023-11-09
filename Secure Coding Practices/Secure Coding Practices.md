@@ -1,4 +1,6 @@
 # Secure Coding Practices
+- OWASP Based Checklist  🌟🌟
+- 200+ Test Cases 🚀🚀
 
 ### Contents:
 1. [Input Validation](#1-input-validation)
@@ -399,7 +401,7 @@ The "Cryptographic Practices" section in your Secure Coding Practices checklist 
   - Cause error conditions
   - Have any of the above effects on downstream applications or systems
 
-- **HTML Entity Encode:** The process of replacing certain ASCII characters with their HTML entity equivalents. For example, encoding would replace the less-than character "<" with the HTML equivalent "&lt;". HTML entities are 'inert' in most interpreters, especially browsers, which can mitigate certain client-side attacks.
+- **HTML Entity Encode:** The process of replacing certain ASCII characters with their HTML entity equivalents. For example, encoding would replace the less-than character "<" with the HTML equivalent "& l t ;". HTML entities are 'inert' in most interpreters, especially browsers, which can mitigate certain client-side attacks.
 
 - **Impact:** A measure of the negative effect on the business that results from the occurrence of an undesired event; what would be the result of a vulnerability being exploited.
 
@@ -411,7 +413,7 @@ The "Cryptographic Practices" section in your Secure Coding Practices checklist 
   - Time stamp from a trusted system component
   - Severity rating for each event
   - Tagging of security-relevant events if they are mixed with other log entries
-  -  Identity of the account/user that caused the event
+  - Identity of the account/user that caused the event
   - Source IP address associated with the request
   - Event outcome (success or failure)
   - Description of the event
